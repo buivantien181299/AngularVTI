@@ -1,0 +1,108 @@
+<div>Edit</div>
+<form novalidate (ngSubmit)="submit(form.value)" #form="ngForm" class="row justify-content-md-center" [formGroup]="rfContact">
+  <div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="title-input">
+        Title
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="title-input" formControlName="title">
+      </div>
+    </div>
+  </div>
+  <div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="imgurl-input" >
+        Image Url
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="url" id="imgurl-input" formControlName="imgUrl">
+      </div>
+    </div>
+  </div><div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="author-input">
+        Author
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="author-input " formControlName="author">
+      </div>
+    </div>
+  </div><div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="finalPrice-input">
+        Final Price
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="finalPrice-input" formControlName="finalPrrice">
+      </div>
+    </div>
+  </div><div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="regularPrice-input">
+        Regular Price
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="regularPrice-input" formControlName="regularPrrice">
+      </div>
+    </div>
+  </div><div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="publisher-input">
+        Publisher
+      </label>
+      <div class="col-10">
+        <select name="Publisher"  style="width: 100%;">
+          <option *ngFor="let p of publishers" [value]="p.value">{{p.value}}</option>
+        </select>
+        <!-- <input class="form-control" type="text" id="publisher-input" formControlName="publisher"> -->
+      </div>
+    </div>
+  </div><div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="publishedDate-input">
+        Published Date
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="publishedDate-input" formControlName="publishedDate">
+      </div>
+    </div>
+  </div><div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="size-input">
+        Size
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="size-input" formControlName="size">
+      </div>
+    </div>
+  </div><div col="col-md-8">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="pageCount-input">
+        Page Count
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="pageCount-input" formControlName="pageCount">
+      </div>
+    </div>
+  </div><div col="col-md-8">
+  <fieldset formGroupName="tikiNow">
+    <div class="from-group row">
+      <label class="col-2 col-form-lable" for="tikinow-input">
+        TikiNow
+      </label>
+      <div class="col-10">
+        <input class="form-control" type="radio" id="tikinow-input" value="true" formControlName="active">Active &nbsp; &nbsp;
+        <input class="form-control" type="radio" id="tikinow-input" value="false" formControlName="inActive">InActive &nbsp; &nbsp;
+      </div>
+    </div>
+  </fieldset>
+    <div class="form-group row">
+      <div class="col-10 offset-2">
+        <button class="btn btn-primary"
+          type="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+
+</form>

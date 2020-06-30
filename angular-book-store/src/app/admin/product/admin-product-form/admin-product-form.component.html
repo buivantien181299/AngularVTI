@@ -1,0 +1,109 @@
+<form ngModel novalidate (ngSubmit)="onSubmit(form.value)" #form="ngForm" class="row justify-content-md-center">
+  <div class="col-md-4">
+    <img [src]="imgurl.value" alt="">
+  </div>
+  <div class="col-md-4">
+    <div class="form-group row">
+      <label>
+        Title
+      </label> <br>
+      <input ngModel class="form-control" type="text" #title="ngModel" name="title" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="title?.errors?.required && title?.touched">
+        Title is required!
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>
+        Image Url
+      </label> <br>
+      <input ngModel class="form-control" type="url" name="imgurl"  #imgurl="ngModel" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="imgurl?.errors?.required && imgurl?.touched">
+        Img url is required!
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>
+        Author
+      </label> <br>
+      <input ngModel class="form-control" type="text" name="author"  #author="ngModel" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="author?.errors?.required && author?.touched">
+         Author is required!
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>
+        Final Price
+      </label> <br>
+      <input ngModel class="form-control" type="text" name="finalPrice" #finalPrice="ngModel" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="finalPrice?.errors?.required && finalPrice?.touched">
+        Finalprice is required!
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>
+        Regular Price
+      </label> <br>
+      <input ngModel class="form-control" type="text" name="regularPrice" #regularPrice="ngModel" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="regularPrice?.errors?.required && regularPrice?.touched">
+      Regular price is required!
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div >
+      <label >
+        Publisher
+      </label> <br>
+      <select name="Publisher"  style="width: 100%;">
+        <option *ngFor="let p of publisher" [value]="p.value">{{p.value}}</option>
+      </select>
+      <!-- <input ngModel class="form-control" type="text" name="publisher" required> -->
+      <!-- <div class="col alert alert-danger" role="alert" *ngIf="form.controls.publisher.errors?.required">
+        Publisher is required!
+      </div> -->
+    </div>
+    <div class="form-group row">
+      <label>
+        Published Date
+      </label> <br>
+      <input ngModel class="form-control" type="text" name="pulsherDate" #pulsherDate="ngModel" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="pulsherDate?.errors?.required && pulsherDate?.touched">
+        Published date is required!
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>
+        Size
+      </label> <br>
+      <input ngModel class="form-control" type="text" name="size" #size="ngModel" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="size?.errors?.required && size?.touched">
+        Size is required!
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>
+        Page Count
+      </label> <br>
+      <input ngModel class="form-control" type="text" name="pageCount" #pageCount="ngModel" required>
+      <div class="col alert alert-danger" role="alert" *ngIf="pageCount?.errors?.required && pageCount?.touched">
+        Page Count is required!
+      </div>
+    </div>
+    <div class="form-group row">
+      <label>
+        TikiNow
+      </label> <br>
+    <div>
+      <input ngModel class="form-check-input position-static"  type="radio" name="Tiki" value="true">Active
+    </div>
+    <div>
+      <input ngModel class="form-check-input position-static" type="radio" name="Tiki" value="false">InActive
+    </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-10 offset-2">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </div>
+</form>

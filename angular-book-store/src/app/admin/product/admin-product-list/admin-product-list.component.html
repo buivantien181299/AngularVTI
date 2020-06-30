@@ -1,3 +1,6 @@
+
+<!-- <button (click) = "()">Demo</button> -->
+
 <div>
   <table class="table ">
     <thead>
@@ -13,10 +16,21 @@
         <td>{{pro.title}}</td>
         <td>{{pro.author}}</td>
         <td>{{pro.publisher}}</td>
-        <td><button type="button" (click)="viewDetail(pro)">Detail</button></td>
+        <td>  <button type="button" (click)="viewDetail(pro)">Detail</button>  &nbsp; &nbsp; &nbsp;
+              <button type="button" (click)="editProduct(pro)">Edit</button>&nbsp; &nbsp; &nbsp;
+              <button type="button" (click)="deleteProduct(pro)">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
 
   <app-admin-product-detail [product]="selectedProduct"></app-admin-product-detail>
+</div>
+
+<br>
+
+<div>
+  <button (click)="addBook()">Thêm sách</button>&nbsp; &nbsp; &nbsp;
+  <app-admin-product-form *ngIf = "isAdd" (submitForm)="handleSubmitForm($event)"></app-admin-product-form>
+  <!-- (submitForm)="handleSubmitForm($event)" -->
 </div>

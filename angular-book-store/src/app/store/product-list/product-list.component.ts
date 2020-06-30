@@ -32,12 +32,12 @@ export class ProductListComponent implements OnInit {
   }
 
   trackByFn(index, item) {
-    return item.$key;
+    return item.id;
   }
 
   onSelectedProduct(productId): void {
-    //this.selectProduct.emit(productId);
-    this.storeService.setSelectedProductId(productId);
+    this.selectProduct.emit(productId);
+    // this.storeService.setSelectedProductId(productId);
   }
 
   search(searchValue): void {
